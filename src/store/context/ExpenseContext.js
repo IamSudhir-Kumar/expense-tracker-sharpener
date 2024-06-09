@@ -51,7 +51,7 @@ const ExpenseProvider = (props) => {
     const email = authCtx.userEmail.replace(/[\.@]/g, "");
     try {
       const res = await axios.get(
-        `https://myreact-expense-tracker-default-rtdb.firebaseio.com/${email}/expenses.json`
+        `https://expense-tracker-default-rtdb.firebaseio.com/${email}/expenses.json`
       );
 
       const data = res.data;
@@ -59,7 +59,7 @@ const ExpenseProvider = (props) => {
       const itemId = Object.keys(data).find((id) => data[id].id === item.id);
       try {
         const res = await axios.delete(
-          `https://myreact-expense-tracker-default-rtdb.firebaseio.com/${email}/expenses/${itemId}.json`
+          `https://expense-tracker-default-rtdb.firebaseio.com/${email}/expenses/${itemId}.json`
         );
       } catch (error) {
         alert(error);
