@@ -13,7 +13,7 @@ const Home = () => {
   const darkMode = useSelector((state) => state.themeReducer.darkMode)
   const verifyEmail = async () => {
     await fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyAray5G5GdSNqIx_WRwfps8LT3Ou-mNTUw",
+      "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDb7u0nyGXK2wBGsP5br7jaOs0Vs-3Jfnc",
       {
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +29,7 @@ const Home = () => {
       .then((data) => console.log(data))
 
     fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyAray5G5GdSNqIx_WRwfps8LT3Ou-mNTUw",
+      "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDb7u0nyGXK2wBGsP5br7jaOs0Vs-3Jfnc",
       {
         method: "POST",
         headers: {

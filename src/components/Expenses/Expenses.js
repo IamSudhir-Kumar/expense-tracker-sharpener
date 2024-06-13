@@ -36,7 +36,7 @@ const Expenses = () => {
     dispatch(expensesActions.setExpenses([...expensesState.expenses, expense]))
     // await context.setExpenses((prev) => [...prev, expense])
     await fetch(
-      "https://linkedin-clone-69176-default-rtdb.firebaseio.com/expenses.json",
+      "https://expense-tracker-d84f2-default-rtdb.firebaseio.com/expenses.json",
       {
         method: "POST",
         headers: {
@@ -90,7 +90,7 @@ const Expenses = () => {
   const handelDelete = async (a) => {
     try {
       fetch(
-        "https://linkedin-clone-69176-default-rtdb.firebaseio.com/expenses.json"
+        "https://expense-tracker-d84f2-default-rtdb.firebaseio.com/expenses.json"
       )
         .then((res) => res.json())
         .then((data) => {
@@ -98,7 +98,7 @@ const Expenses = () => {
             (item) => data[item].description === a
           )
           fetch(
-            `https://linkedin-clone-69176-default-rtdb.firebaseio.com/expenses/${get_}.json`,
+            `https://expense-tracker-d84f2-default-rtdb.firebaseio.com/expenses/${get_}.json`,
             {
               method: "DELETE",
             }
@@ -120,7 +120,7 @@ const Expenses = () => {
     e.preventDefault()
     console.log("updating")
     fetch(
-      "https://linkedin-clone-69176-default-rtdb.firebaseio.com/expenses.json"
+      "https://expense-tracker-d84f2-default-rtdb.firebaseio.com/expenses.json"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -129,7 +129,7 @@ const Expenses = () => {
         )
         console.log(expense)
         fetch(
-          `https://linkedin-clone-69176-default-rtdb.firebaseio.com/expenses/${get_}.json`,
+          `https://expense-tracker-d84f2-default-rtdb.firebaseio.com/expenses/${get_}.json`,
           {
             method: "PUT",
             headers: {
